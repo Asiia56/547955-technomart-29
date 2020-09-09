@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Asiia](https://up.htmlacademy.ru/htmlcss/29/user/547955).
-* Наставник: `Неизвестно`.
+* Наставник: [Анастасия Красавина] (https://htmlacademy.ru/profile/id186775).
 
 ---
 

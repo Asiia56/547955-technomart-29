@@ -1,0 +1,48 @@
+/* Variables */
+:root {
+  /* basic colours */
+  --basic-white: #FFFFFF;
+  --basic-black: #000000;
+  --basic-red: #EE3643;
+  --basic-green: #63A63E;
+  --basic-grey: #A9A9A9;
+  --basic-grey-light: #C5C5C5;
+  --basic-background: #F1F5F7;
+  --basic-yellow: #FFD180;
+  --grey-border: #E5E5E5;
+  --grey-h-background: #EAEAEA;
+  /* behaviour */
+  --error: #BA2732;
+  --success: #5FBB2D;
+  --onclick: #61D322;
+  /*special */
+  --lighten-background: #F9F5F0;
+  --light-background: #F7F3EC;
+  /* features */
+  --light-braun-background: #FFBF47;
+  --blue-background: #3BBCE3;
+  --pale-lilac-background: #DC91D8;
+  --pale-green-background: #8ED78F;
+  --pale-yellow-background: #FFC047;
+  /* services */
+  --dark-blue-background: #32425C;
+}
+body {
+  min-width: 960px;
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: var(--basic-white);
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

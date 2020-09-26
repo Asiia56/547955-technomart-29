@@ -2,15 +2,21 @@
 :root {
   /* basic colours */
   --basic-white: #FFFFFF;
+  --basic-white-half: rgba(255, 255, 255, 0.5);
   --basic-black: #000000;
   --basic-red: #EE3643;
+  --basic-red-hover: #CA2C37;
   --basic-green: #63A63E;
   --basic-grey: #A9A9A9;
   --basic-grey-light: #C5C5C5;
+  --basic-grey-middle: #CCCCCC;
   --basic-background: #F1F5F7;
   --basic-yellow: #FFD180;
   --grey-border: #E5E5E5;
-  --grey-h-background: #EAEAEA;
+  --grey-header-background: #F3F7F9;
+  --dark-blue: #32425C;
+  --very-dark-blue: #293449;
+  --very-dark-blue-socialBtn: #212A3A;
   /* behaviour */
   --error: #BA2732;
   --success: #5FBB2D;
@@ -24,9 +30,12 @@
   --pale-lilac-background: #DC91D8;
   --pale-green-background: #8ED78F;
   --pale-yellow-background: #FFC047;
-  /* services */
-  --dark-blue-background: #32425C;
+  /*out of category*/
+  --gray-blue: #405069;
+  --very-light-grey: #F4F4F4;
 }
+
+/*basic*/
 body {
   min-width: 960px;
   margin: 0;
@@ -36,8 +45,12 @@ body {
   line-height: 24px;
   font-weight: 400;
   text-transform: uppercase;
-  background-color: var(--basic-white);
 }
+
+body li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -45,4 +58,391 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.btn {
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--basic-white);
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: var(--basic-red);
+  border: none;
+  outline: none;
+}
+
+/*styles for header*/
+.pageHeader {
+  width: 1200px;
+  background-color: var(--grey-header-background);
+}
+
+.headerFirstLine {
+  background-color: var(--very-dark-blue);
+  color: var(--basic-white);
+  /*why doesn't work? css same as in .btnOrder*/
+}
+
+.searchForm:active {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
+}
+
+.searchForm:active .iconSearch {
+  color: var(--basic-red);
+}
+
+.mainLogo {
+  width: 220px;
+  height: 47px;
+  background-color: var(--basic-red);
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.mainLogo:active {
+  background-color: var(--error);
+}
+
+.iconHeader {
+  opacity: 0.3;
+}
+
+.iconHeader:hover {
+  opacity: 100%;
+}
+
+.bookCart:focus {
+  color: var(--basic-white-half);
+}
+
+.btnOrder {
+  background-color: var(--basic-green);
+  color: var(--basic-white);
+}
+
+.btnOrder:focus {
+  opacity: 0.5;
+}
+
+.description {
+  font-family: Cuprum;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  align-items: center;
+  color: var(--basic-red);
+}
+
+.headerPhone {
+  color: var(--basic-red);
+  font-size: 21px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.headerAdress {
+  color: var(--dark-blue);
+  font-size: 14px;
+  text-align: center;
+}
+
+.siteNav {
+  color: var(--basic-white);
+  background-color: var(--dark-blue);
+  font-size: 18px;
+  align-items: center;
+  /*no matter, here or in .siteNav li, the text still not white*/
+}
+
+.login {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
+  height: 45px;
+  width: 121px;
+  border-radius: 0px;
+  align-items: center;
+  text-align: center;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.signUp {
+  height: 45px;
+  width: 150px;
+}
+
+.userName {
+  height: 45px;
+  width: 299px;
+}
+
+.login:hover {
+  color: var(--basic-red);
+}
+
+.login:focus {
+  color: var(--basic-grey-light);
+}
+
+/*for .features*/
+.materials, .tools, .equipment, .discount, .delivery {
+  width: 300px;
+  height: 123px;
+  color: var(--basic-white);
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.materials {
+  background-color: var(--light-braun-background);
+}
+
+.tools {
+  background-color: var(--blue-background);
+}
+
+.equipment {
+  background-color: var(--pale-lilac-background);
+}
+
+.discount {
+  background-color: var(--pale-green-background);
+}
+
+.delivery {
+  background-color: var(--pale-yellow-background);
+}
+
+.btnRedirect {
+  width: 135px;
+  height: 38px;
+  opacity: 1;
+  /*why is in Figma eye for this link closed?*/
+}
+
+.btnRedirect:hover {
+  background-color: var(--basic-grey-light);
+}
+
+.btnRedirect:focus {
+  background-color: var(--basic-grey-middle);
+}
+
+.btnCatalog:hover {
+  background-color: var(--basic-red-hover);
+}
+
+.btnCatalog:focus {
+  background-color: var(--error);
+}
+
+/*for .popGoods*/
+.popHeader {
+  background-color: var(--lighten-background);
+  color: var(--dark-blue);
+}
+
+.popGoodsItem {
+  width: 220px;
+  height: 318px;
+}
+
+.oldPrice {
+  color: var(--basic-grey);
+  text-decoration: line-through;
+}
+
+.popManufactorsItem {
+  width: 220px;
+  height: 145px;
+}
+
+.popManufactorsItem:hover {
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+.popManufactorsItem:focus {
+  opacity: 0.5;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+/*for services*/
+.services {
+  background-color: var(--basic-background);
+  width: 1200px;
+}
+
+.servicesList li {
+  background: var(--dark-blue);
+  box-shadow: 0 1px 0 var(--very-dark-blue);
+}
+
+.servicesList a {
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: bold;
+  color: var(--basic-white);
+}
+
+.services-list .checked {
+  background-color: var(--basic-white);
+  box-shadow: 0 1px 0 var(--basic-white);
+}
+
+.checked a {
+  color: var(--dark-blue);
+}
+
+.servicesList li:hover:not(.checked) {
+  background: var(--very-dark-blue);
+  box-shadow: 0 1px 0 var(--very-dark-blue);
+}
+
+.transportCompanies {
+  font-size: 18px;
+}
+
+/*for footer*/
+.pageFooter {
+  width: 1200px;
+  background-color: var(--dark-blue);
+  color: var(--grey-header-background);
+}
+
+.footerNavFisrt li, .footerContacts, .footerContacts a {
+  color: var(--basic-white);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footerNavSecond {
+  color: var(--basic-yellow);
+}
+
+.footerNavFisrt li:hover, .footerNavSecond li:hover {
+  text-decoration: underline;
+}
+
+.footerNavFisrt li:focus, .footerNavSecond li:focus {
+  opacity: 0.5;
+}
+
+.footerLastLine {
+  background-color: var(--very-dark-blue);
+  color: var(--basic-white);
+}
+
+.social {
+  text-align: center;
+}
+
+.socialBtn {
+  width: 44px;
+  height: 44px;
+  background-color: var(--very-dark-blue-socialBtn);
+}
+
+.socialBtn:hover,
+.socialBtn:focus {
+  background-color: var(--basic-red);
+}
+
+.reference {
+  background-color: var(--basic-yellow);
+}
+
+/*popUp*/
+.writeUs {
+  min-width: 620px;
+  background-color: inherit;
+}
+
+.labelForm {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--basic-black);
+}
+
+.inputBox {
+  font-size: 13px;
+  line-height: 24px;
+  color: var(--basic-grey);
+  border: 2px solid #C5C5C5;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.lineSubmit {
+  background-color: var(--very-light-grey);
+}
+
+.btnSubmit {
+  height: 38px;
+  width: 460px;
+  font-size: 14px;
+  line-height: 18px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--basic-white);
+}
+
+/*catalog*/
+.breadcrumbs {
+  list-style: none;
+}
+
+.breadcrumbs a {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--basic-black);
+}
+
+.articleFewWords {
+  width: 1200px;
+  background-color: var(--basic-background);
+}
+
+.articleFewWords h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.articleFewWords p {
+  font-size: 13px;
+  line-height: 24px;
+  color: var(--basic-black);
+}
+
+/* Pagination */
+.pagination a {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--basic-black);
+}
+
+.pagination li {
+  height: 38px;
+  width: 38px;
+  text-align: center;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.paginationCurrent {
+  background-color: var(--basic-red);
+}
+
+.paginationCurrent a {
+  color: var(--basic-white);
+}
+
+.paginationNext {
+  width: 140px; /*why did not worked?*/
+  border-radius: 2px;
 }

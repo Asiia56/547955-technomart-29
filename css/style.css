@@ -37,9 +37,13 @@
 
 /*basic*/
 body {
+  width: 100%;
+}
+
+.container {
   min-width: 960px;
-  margin: 0;
   padding: 0;
+  margin: 0 auto;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
@@ -47,7 +51,7 @@ body {
   text-transform: uppercase;
 }
 
-body li {
+li {
   list-style-type: none;
 }
 
@@ -80,8 +84,10 @@ img {
 
 .headerFirstLine {
   background-color: var(--very-dark-blue);
+}
+
+.headerFirstLine a {
   color: var(--basic-white);
-  /*why doesn't work? css same as in .btnOrder*/
 }
 
 .searchForm:active {
@@ -109,7 +115,7 @@ img {
 }
 
 .iconHeader:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .bookCart:focus {
@@ -126,7 +132,6 @@ img {
 }
 
 .description {
-  font-family: Cuprum;
   font-style: italic;
   font-size: 16px;
   line-height: 23px;
@@ -148,11 +153,13 @@ img {
 }
 
 .siteNav {
-  color: var(--basic-white);
   background-color: var(--dark-blue);
   font-size: 18px;
   align-items: center;
-  /*no matter, here or in .siteNav li, the text still not white*/
+}
+
+.siteNav a {
+  color: var(--basic-white);
 }
 
 .login {
@@ -310,7 +317,9 @@ img {
   color: var(--grey-header-background);
 }
 
-.footerNavFisrt li, .footerContacts, .footerContacts a {
+.footerNavFisrt li,
+.footerContacts,
+.footerContacts a {
   color: var(--basic-white);
   font-size: 18px;
   line-height: 24px;
@@ -442,7 +451,7 @@ img {
   color: var(--basic-white);
 }
 
-.paginationNext {
-  width: 140px; /*why did not worked?*/
+.paginationNext li {
+  width: 140px;
   border-radius: 2px;
 }

@@ -76,6 +76,19 @@ img {
   outline: none;
 }
 
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden
+}
+
 /*styles for header*/
 .pageHeader {
   width: 1200px;
@@ -225,7 +238,6 @@ img {
   width: 135px;
   height: 38px;
   opacity: 1;
-  /*why is in Figma eye for this link closed?*/
 }
 
 .btnRedirect:hover {
@@ -283,13 +295,13 @@ img {
 .servicesList li {
   background: var(--dark-blue);
   box-shadow: 0 1px 0 var(--very-dark-blue);
+  color: var(--basic-white);
 }
 
 .servicesList a {
   font-size: 21px;
   line-height: 30px;
   font-weight: bold;
-  color: var(--basic-white);
 }
 
 .services-list .checked {
@@ -317,7 +329,7 @@ img {
   color: var(--grey-header-background);
 }
 
-.footerNavFisrt li,
+.footerNavFisrt a,
 .footerContacts,
 .footerContacts a {
   color: var(--basic-white);
@@ -325,7 +337,7 @@ img {
   line-height: 24px;
 }
 
-.footerNavSecond {
+.footerNavSecond a {
   color: var(--basic-yellow);
 }
 
@@ -347,8 +359,6 @@ img {
 }
 
 .socialBtn {
-  width: 44px;
-  height: 44px;
   background-color: var(--very-dark-blue-socialBtn);
 }
 
@@ -377,7 +387,7 @@ img {
   font-size: 13px;
   line-height: 24px;
   color: var(--basic-grey);
-  border: 2px solid #C5C5C5;
+  border: 2px solid var(--basic-grey-light);
   box-sizing: border-box;
   border-radius: 2px;
 }
@@ -407,6 +417,22 @@ img {
   font-size: 13px;
   line-height: 18px;
   color: var(--basic-black);
+}
+
+.sort {
+  background-color: var(--light-background);
+}
+
+.sortList {
+  text-transform: uppercase;
+  color: var(--basic-black);
+  font-size: 13px;
+  line-height: 18px;
+  opacity: 0.3;
+}
+
+.sortList .current {
+  color: var(--basic-red);
 }
 
 .articleFewWords {
@@ -454,4 +480,9 @@ img {
 .paginationNext li {
   width: 140px;
   border-radius: 2px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  align-items: center;
+  text-align: center;
 }

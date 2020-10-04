@@ -24,6 +24,7 @@
   /*special */
   --lighten-background: #F9F5F0;
   --light-background: #F7F3EC;
+  --range-background: #D7DCDE;
   /* features */
   --light-braun-background: #FFBF47;
   --blue-background: #3BBCE3;
@@ -33,17 +34,19 @@
   /*out of category*/
   --gray-blue: #405069;
   --very-light-grey: #F4F4F4;
+  --bar-green: #00ca74;
+  --toogle-grey: #ABABAB;
 }
 
 /*basic*/
-body {
+.page {
   width: 100%;
 }
 
 .container {
-  min-width: 960px;
-  padding: 0;
+  width: 960px;
   margin: 0 auto;
+  padding: 0;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
@@ -359,8 +362,15 @@ img {
 }
 
 .socialBtn {
+  width: 44px;
+  height: 44px;
+  vertical-align: center;
+  text-align: center;
   background-color: var(--very-dark-blue-socialBtn);
+  border-radius: 50%;
 }
+
+.socialBtn span {}
 
 .socialBtn:hover,
 .socialBtn:focus {
@@ -417,6 +427,95 @@ img {
   font-size: 13px;
   line-height: 18px;
   color: var(--basic-black);
+}
+
+/*filter*/
+.filter {
+  width: 220px;
+  height: 720px;
+}
+
+.filter h2 {
+  background-color: var(--light-background);
+}
+
+.filterOption {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.filterOption legend {
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.rangeControls {
+  position: relative;
+  width: 220px;
+  height: 41px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: var(--range-background);
+  margin-bottom: 9px;
+}
+
+.rangeControls .scale {
+  height: 2px;
+  background-color: var(--range-background);
+}
+
+.rangeControls .bar {
+  width: 70%;
+  height: 2px;
+  background: var(--bar-green);
+}
+
+.rangeControls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  background-color: var(--toogle-grey);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.rangeControls .minToogle {
+  left: 18px;
+}
+
+.rangeControls .maxToogle {
+  left: 160px;
+}
+
+.priceControls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceRange {
+  font-weight: normal;
+}
+
+.priceOutput {
+  background-color: var(--light-background);
+  height: 38px;
+  width: 95px;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  border: none;
 }
 
 .sort {

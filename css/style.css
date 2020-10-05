@@ -24,6 +24,7 @@
   /*special */
   --lighten-background: #F9F5F0;
   --light-background: #F7F3EC;
+  --range-background: #D7DCDE;
   /* features */
   --light-braun-background: #FFBF47;
   --blue-background: #3BBCE3;
@@ -33,17 +34,19 @@
   /*out of category*/
   --gray-blue: #405069;
   --very-light-grey: #F4F4F4;
+  --bar-green: #00ca74;
+  --toogle-grey: #ABABAB;
 }
 
 /*basic*/
-body {
+.page {
   width: 100%;
 }
 
 .container {
-  min-width: 960px;
-  padding: 0;
+  width: 960px;
   margin: 0 auto;
+  padding: 0;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
@@ -74,6 +77,19 @@ img {
   background-color: var(--basic-red);
   border: none;
   outline: none;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden
 }
 
 /*styles for header*/
@@ -225,7 +241,6 @@ img {
   width: 135px;
   height: 38px;
   opacity: 1;
-  /*why is in Figma eye for this link closed?*/
 }
 
 .btnRedirect:hover {
@@ -283,13 +298,13 @@ img {
 .servicesList li {
   background: var(--dark-blue);
   box-shadow: 0 1px 0 var(--very-dark-blue);
+  color: var(--basic-white);
 }
 
 .servicesList a {
   font-size: 21px;
   line-height: 30px;
   font-weight: bold;
-  color: var(--basic-white);
 }
 
 .services-list .checked {
@@ -317,7 +332,7 @@ img {
   color: var(--grey-header-background);
 }
 
-.footerNavFisrt li,
+.footerNavFisrt a,
 .footerContacts,
 .footerContacts a {
   color: var(--basic-white);
@@ -325,7 +340,7 @@ img {
   line-height: 24px;
 }
 
-.footerNavSecond {
+.footerNavSecond a {
   color: var(--basic-yellow);
 }
 
@@ -349,8 +364,13 @@ img {
 .socialBtn {
   width: 44px;
   height: 44px;
+  vertical-align: center;
+  text-align: center;
   background-color: var(--very-dark-blue-socialBtn);
+  border-radius: 50%;
 }
+
+.socialBtn span {}
 
 .socialBtn:hover,
 .socialBtn:focus {
@@ -377,7 +397,7 @@ img {
   font-size: 13px;
   line-height: 24px;
   color: var(--basic-grey);
-  border: 2px solid #C5C5C5;
+  border: 2px solid var(--basic-grey-light);
   box-sizing: border-box;
   border-radius: 2px;
 }
@@ -407,6 +427,111 @@ img {
   font-size: 13px;
   line-height: 18px;
   color: var(--basic-black);
+}
+
+/*filter*/
+.filter {
+  width: 220px;
+  height: 720px;
+}
+
+.filter h2 {
+  background-color: var(--light-background);
+}
+
+.filterOption {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--basic-black);
+}
+
+.filterOption legend {
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.rangeControls {
+  position: relative;
+  width: 220px;
+  height: 41px;
+  padding-top: 39px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: var(--range-background);
+  margin-bottom: 9px;
+}
+
+.rangeControls .scale {
+  height: 2px;
+  background-color: var(--range-background);
+}
+
+.rangeControls .bar {
+  width: 70%;
+  height: 2px;
+  background: var(--bar-green);
+}
+
+.rangeControls .toggle {
+  position: absolute;
+  top: 31px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  border: 8px solid #ffffff;
+  background-color: var(--toogle-grey);
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+}
+
+.rangeControls .minToogle {
+  left: 18px;
+}
+
+.rangeControls .maxToogle {
+  left: 160px;
+}
+
+.priceControls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceRange {
+  font-weight: normal;
+}
+
+.priceOutput {
+  background-color: var(--light-background);
+  height: 38px;
+  width: 95px;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: center;
+  border: none;
+}
+
+.sort {
+  background-color: var(--light-background);
+}
+
+.sortList {
+  text-transform: uppercase;
+  color: var(--basic-black);
+  font-size: 13px;
+  line-height: 18px;
+  opacity: 0.3;
+}
+
+.sortList .current {
+  color: var(--basic-red);
 }
 
 .articleFewWords {
@@ -454,4 +579,9 @@ img {
 .paginationNext li {
   width: 140px;
   border-radius: 2px;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  align-items: center;
+  text-align: center;
 }

@@ -10,8 +10,7 @@
   <link href="css\style.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
+<body class="pageBody">
       <header class="pageHeader mainHeader">
         <div class="headerFirstLine">
           <a class="mainLogo" href="index.html"> <img src="img/main-logo.png" width="108" height="18" alt="Техномарт"> </a>
@@ -59,38 +58,42 @@
         </nav>
       </header>
       <main class="center">
-        <h1 hidden>Магазин строительных материалов «Техномарт»</h1>
+        <h1 hidden>Магазин строительных материалов &laquo;Техномарт&raquo;</h1>
         <section class="features">
           <article class="materials">
             <h3>Материалы</h3>
             <img src="img/features/icon-materials.svg" width="44" height="65" alt="materials">
-            <a href="#" class="btnRedirect">НА ЛЮБОЙ ВКУС</a>
+            <a href="#" class="btnRedirect">На любой вкус</a>
           </article>
           <article class="tools">
             <h3>Инструмент</h3>
             <img src="img/features/icon-tools.svg" width="75" height="61" alt="tools">
-            <a href="#" class="btnRedirect">НА ВСЕ СЛУЧАИ</a>
+            <a href="#" class="btnRedirect">На все случаи</a>
           </article>
           <article class="equipment">
             <h3>Техника</h3>
             <img src="img/features/icon-equipment.svg" width="78" height="62" alt="equipment">
-            <a href="#" class="btnRedirect">ДЛЯ СТРОЙКИ</a>
+            <a href="#" class="btnRedirect">Для стройки</a>
           </article>
           <article class="discount">
             <h3>Скидки 50%</h3>
             <img src="img/features/icon-discount.svg" width="59" height="72" alt="discount">
-            <a href="#" class="btnRedirect">На 350 ТОВАРОВ</a>
+            <a href="#" class="btnRedirect">На 350 товаров</a>
           </article>
           <article class="delivery">
             <h3>Доставка</h3>
             <img src="img/features/icon-delivery.svg" width="78" height="63" alt="delivery">
-            <a href="#" class="btnRedirect">БЕСПЛАТНО</a>
+            <a href="#" class="btnRedirect">Бесплатно</a>
           </article>
-          <figure class="slaider">
-            <button class="btnSlide prevSlide iconLeft"></button>
-            <button class="btnSlide nextSlide iconRight"></button>
-            <img src="img/slaider-perforator.jpg" width="620" height="266" alt="man with perforator">
-            <img src="img/slaider-drill.jpg" width="620" height="266" class="visually-hidden" alt="man with drill">
+          <figure class="slider">
+              <button class="btnSlide prevSlide"> <img src="img/svg/icon-left.svg" width="22" height="40" alt="iconLeft" /></button>
+              <button class="btnSlide nextSlide"> <img src="img/svg/icon-left.svg" width="22" height="40" alt="iconRight" /></button>
+            <div class="sliderInner">
+              <div class="sliderSlides">
+                <img src="img/slaider-perforator.jpg" width="620" height="266" alt="man with perforator">
+                <img src="img/slaider-drill.jpg" width="620" height="266" alt="man with drill">
+              </div>
+            </div>
             <a href="catalog.html" class="btn btnCatalog">Открыть каталог</a>
           </figure>
         </section>
@@ -205,7 +208,7 @@
           </div>
         </section>
         <section class="about">
-          <h2>КОМПАНИЯ «Техномарт»</h2>
+          <h2>КОМПАНИЯ &laquo;Техномарт&raquo;</h2>
           <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и <br /> строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
           <p> Мы можем доставить ваш товар в самые отдаленные точки России!
             Техномарт работает со многими транспортными компаниями:
@@ -223,7 +226,7 @@
             заехав в наш офис: </p>
             <img src="img/map.jpg" width="300" height="158" alt="Карта"  />
           <iframe class="contactsMap visually-hidden" src="#" title="map"> </iframe>
-          <p> <a class="btn" href="#">ЗАБЛУДИЛИСЬ? НАПИШИТЕ НАМ!</a> </p>
+          <p> <a class="btn" href="#">Заблудились? Напишите нам!</a> </p>
         </section>
       </main>
       <footer class="pageFooter mainFooter">
@@ -253,7 +256,7 @@
         </section>
         <section class="footerLastLine">
           <p class="footerCopyright">
-            © 2010–2019 Компания «Техномарт»<br />
+            © 2010–2019 Компания &laquo;Техномарт&raquo;<br />
             Все права защищены
           </p>
           <section>
@@ -274,29 +277,32 @@
         </section>
       </footer>
 
-      <section class="writeUs popUp visually-hidden">
-        <h2 disabled>Напишите нам</h2>
-        <button type="button"><img src="#" alt="close" /></button>
-        <formclass="writeUsForm" action="https://echo.htmlacademy.ru" method="post">
-          <p>
-            <label class="labelForm" for="name">Ваше имя:</label>
-            <input class="inputBox" id="name-field" type="text" name="name" placeholder="Имя Фамилия" />
-            <label class="labelForm" for="email">Ваш e-mail:</label>
-            <input class="inputBox" id="email-field" type="email" name="email" placeholder="email@example.com" />
-          </p>
-          <p class="labelForm">Текст письма:</p>
-          <textarea class="inputBox" id="letter-field" name="letter" rows="10">В свободной форме</textarea>
-          <div class="lineSubmit">
-            <input class="btn btnSubmit" type="submit" value="Отправить" />
-          </div>
+      <!--visually-hidden-->
+
+      <section class="writeUs popUp">
+        <h2 class="visually-hidden">Напишите нам</h2>
+          <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" width="21" height="21" alt="close" aria-label="Закрыть"/></button>
+        <form class="writeUsForm" action="https://echo.htmlacademy.ru" method="post">
+<div class="formWrapper">
+  <p class="writeUsLogin">
+    <label class="labelForm" for="name">Ваше имя:</label>
+    <input class="inputBox" id="name-field" type="text" name="name" placeholder="Имя Фамилия" />
+    <label class="labelForm" for="email">Ваш e-mail:</label>
+    <input class="inputBox" id="email-field" type="email" name="email" placeholder="email@example.com" />
+  </p>
+  <p class="labelForm">Текст письма:</p>
+  <textarea class="inputBox" id="letter-field" name="letter" rows="4">В свободной форме</textarea>
+  <div class="lineSubmit">
+    <input class="btn btnSubmit" type="submit" value="Отправить" />
+  </div>
+</div>
           </form>
       </section>
 
-      <section class="mapPopUp popUp visually-hidden">
-        <button type="button"><img src="#" alt="close" /></button>
-        <h2 disabled>Как добраться</h2>
-        <!-- Здесь будет карта -->
+      <section class="mapPopUp popUp">
+        <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" alt="close" aria-label="Закрыть"/></button>
+        <h2 class="visually-hidden">Как добраться</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426" width="943" height="449" allowfullscreen title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"></iframe>
       </section>
-    </div>
-</body>
+    </body>
 </html>

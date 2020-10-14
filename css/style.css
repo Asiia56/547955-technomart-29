@@ -42,20 +42,16 @@
 .page {
   width: 100%;
   height: 100%;
-}
-
-.pageBody {
-  width: 960px;
-  margin: 0 auto;
-  padding: 0;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
-  text-transform: uppercase;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
-  align-content: start;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 li {
@@ -69,6 +65,10 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+h2, h3 {
+  text-transform: uppercase;
 }
 
 .btn {
@@ -98,14 +98,11 @@ img {
 
 /*styles for header*/
 .pageHeader {
-  width: 1200px;
   background-color: var(--grey-header-background);
-  display: grid;
 }
 
 .headerFirstLine {
   background-color: var(--very-dark-blue);
-  grid-template-columns: 220px 225px 1fr;
 }
 
 .headerFirstLine a {
@@ -218,12 +215,32 @@ img {
 }
 
 /*for .features*/
+
+.features {
+  width: 940px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.slider {
+  grid-column: 1/3;
+  grid-row: 2/4;
+  position: relative;
+}
+
+.nextSlide img {
+  transform: rotate(-180deg);
+}
+
 .materials, .tools, .equipment, .discount, .delivery {
   width: 300px;
   height: 123px;
   color: var(--basic-white);
   font-size: 24px;
   line-height: 30px;
+  z-index: -1;
 }
 
 .materials {
@@ -249,7 +266,8 @@ img {
 .btnRedirect {
   width: 135px;
   height: 38px;
-  opacity: 1;
+  opacity: 0.3;
+  color: var(--basic-white);
 }
 
 .btnRedirect:hover {
@@ -267,32 +285,6 @@ img {
 .btnCatalog:focus {
   background-color: var(--error);
 }
-
-/* for slider*/
-
-.sliderInner {
-  overflow: hidden;
-}
-
-.sliderSlides {
-  width: 200%
-}
-
-.sliderSlides img {
-  float: left;
-}
-
-.nextSlide img {
-  transform: rotate(-180deg);
-}
-
-.prevSlide:focus ~ .sliderInner .sliderSlides {
-  transform: translate(620px);
-  }
-
-.nextSlide:focus ~ .sliderInner .sliderSlides {
-  transform: translate(-620px);
-  }
 
 /*for .popGoods*/
 .popHeader {
@@ -316,18 +308,18 @@ img {
 }
 
 .popManufactorsItem:hover {
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .popManufactorsItem:focus {
   opacity: 0.5;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 /*for services*/
 .services {
   background-color: var(--basic-background);
-  width: 1200px;
+  width: 100%;
 }
 
 .servicesList li {
@@ -362,14 +354,14 @@ img {
 
 /*for footer*/
 .pageFooter {
-  width: 1200px;
   background-color: var(--dark-blue);
   color: var(--grey-header-background);
 }
 
 .footerNavFisrt a,
 .footerContacts,
-.footerContacts a {
+.footerContacts a,
+.footerNavSecond {
   color: var(--basic-white);
   font-size: 18px;
   line-height: 24px;
@@ -413,7 +405,7 @@ img {
 }
 
 .reference {
-  background-color: var(--basic-yellow);
+  color: var(--basic-yellow);
 }
 
 /*catalog*/
@@ -542,7 +534,6 @@ img {
 .articleFewWords h2 {
   font-size: 30px;
   line-height: 30px;
-  text-transform: uppercase;
   color: var(--basic-black);
 }
 
@@ -589,7 +580,7 @@ img {
 /*popUp*/
 .popUp {
   display: none;
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   border-top: 7px solid var(--basic-red);
   background-color: var(--basic-white);
   z-index: 100;
@@ -608,9 +599,10 @@ img {
   width: 21px;
   height: 21px;
   background-repeat: no-repeat;
-	background-color: transparent;
+  background-color: transparent;
   border: 0;
   cursor: pointer;
+  padding: 0;
 }
 
 .writeUs {
@@ -620,18 +612,17 @@ img {
   background-color: var(--basic-white);
 }
 
-.formWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .writeUsLogin {
   display: flex;
-  flex-direction: column;
-  margin: 10px auto;
-  width: 220px;
+  justify-content: space-between;
+  padding-top: 46px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 13px;
+}
+
+.writeUsLoginSection {
+  width: 48%
 }
 
 .labelForm {
@@ -639,6 +630,7 @@ img {
   line-height: 24px;
   color: var(--basic-black);
   font-family: "Cuprum", Arial, sans-serif;
+  padding-bottom: 11px;
 }
 
 .inputBox {
@@ -648,14 +640,22 @@ img {
   border: 2px solid var(--basic-grey-light);
   box-sizing: border-box;
   border-radius: 2px;
-  width: 220px;
   height: 38px;
-  margin-top: 10px;
+  width: 220px;
+  margin-top: 11px;
 }
 
 .writeUsForm textarea {
+  height: 114px;
+  width: 460px;
   display: flex;
   flex-direction: column;
+  margin-top: 11px;
+}
+
+.writeUsLoginTextArea {
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .lineSubmit {
@@ -664,6 +664,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 37px;
 }
 
 .btnSubmit {
@@ -678,7 +679,7 @@ img {
 
 .mapPopUp {
   width: 943px;
-height: 449px;
+  height: 449px;
 }
 
 .mapPopUp iframe {

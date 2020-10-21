@@ -40,6 +40,7 @@
   --very-light-grey: #F4F4F4;
   --bar-green: #00ca74;
   --toogle-grey: #ABABAB;
+  --footer-shadow: rgba(0, 0, 0, 0.24);
 }
 
 /*basic*/
@@ -78,16 +79,22 @@ h2, h3 {
 .btn {
   font-size: 14px;
   line-height: 18px;
-  text-align: center;
   color: var(--basic-white);
+  background-color: var(--basic-red);
+  text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
-  background-color: var(--basic-red);
   border: none;
   outline: none;
-  text-align: center;
-  border: none;
   padding: 11px 24px 9px 24px;
+}
+
+.btn:hover {
+  background-color: var(--basic-red-hover);
+}
+
+.btn:focus {
+  background-color: var(--error);
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -440,27 +447,31 @@ h2, h3 {
 .popGoodsList {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0;
-  margin: 0;
-  margin-bottom: 35px;
+  margin: 0 21px 0 35px;
 }
 
 .hoverOptions {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: absolute;
   top: 40px;
+  align-items: center;
+  width: 100%;
   visibility: hidden;
 }
 
 .btnBuy {
   background-color: var(--basic-green);
-  width: 135px;
-  height: 38px;
   color: var(--basic-white);
   box-shadow: inset 0px -3px 0px var(--dark-green);
+  display: flex;
+  border-radius: 2px;
   margin-bottom: 10px;
+  text-align: center;
+  padding: 10px 30px 10px 30px;
 }
 
 .btnBuy::before {
@@ -468,54 +479,47 @@ h2, h3 {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background-image: url("../img/icon-cart.svg");
+  background-image: url("../img/svg/icon-cart.svg");
   background-repeat: no-repeat;
   opacity: 0.3;
   margin-right: 10px;
 }
 
 .btnBookmark {
-  width: 135px;
-  height: 38px;
   color: var(--dark-blue);
-  background-color: var(--basic-white);
+  background-color: transparent;
   border: 3px solid var(--basic-green);
   box-sizing: border-box;
   border-radius: 2px;
+  padding: 7px 30px 7px 30px;
 }
 
 .popGoodsItem {
   width: 220px;
   height: 318px;
-  margin-right: 21px;
-  margin-top: 21px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.popGoodsItem:last-child {
-  margin-right: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .newMark::after {
   content: "NEW";
   position: absolute;
   display: flex;
+  justify-content: center;
+  align-items: center;
   top: 7px;
   right: -25px;
+  color: var(--basic-white);
   width: 100px;
   height: 30px;
   background-color: var(--basic-red);
-  font-family: "Cuprum", Arial, sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  transform: rotate(45deg);
   font-size: 14px;
   line-height: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--basic-white);
-  transform: rotate(45deg);
+  font-family: "Cuprum", "Arial", sans-serif;
 }
 
 .popGoodsItem h4 {
@@ -525,17 +529,23 @@ h2, h3 {
   font-size: 18px;
   line-height: 20px;
   color: var(--basic-black);
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
 
 .popGoodsItem img {
-  height: 164px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.imgWrapper {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 164px;
+  overflow: hidden;
 }
 
 .popGoodsItem:hover .hoverOptions {
@@ -616,12 +626,16 @@ h2, h3 {
 }
 
 /* for popular Manufactors*/
+.popManufactors {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
 .popManufactorsList {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  margin-bottom: 35px;
 }
 
 .popManufactorsItem {
@@ -655,9 +669,8 @@ h2, h3 {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 65px;
-  margin: 0 auto;
-  padding-bottom: 115px;
+  justify-content: flex-end;
+  margin-bottom: 50px;
 }
 
 .services h2,
@@ -670,7 +683,6 @@ h2, h3 {
 
 .services h3 {
   color: var(--dark-blue);
-  padding-left: 70px;
 }
 
 .services p {
@@ -680,14 +692,13 @@ h2, h3 {
   font-size: 13px;
   line-height: 24px;
   color: var(--basic-black);
-  margin: 0;
-  padding-left: 70px;
 }
 
 .servicesSlider {
   width: 940px;
   display: flex;
   position: relative;
+  padding-bottom: 70px;
 }
 
 .deliveryService::before {
@@ -728,7 +739,8 @@ h2, h3 {
   position: relative;
   padding: 0;
   margin: 0;
-  margin margin-right: 80px;
+  margin-top: 20px;
+  margin-right: 5px;
 }
 
 .servicesList li {
@@ -740,18 +752,18 @@ h2, h3 {
   font-weight: bold;
   display: inline-block;
   padding: 15px 142px 15px 25px;
+  min-width: 245px;
+  box-sizing: border-box;
 }
 
-.servicesList li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 279px;
+.servicesSlide {
   background-image: url("../img/svg/icon-shadow.png");
   background-repeat: no-repeat;
-  opacity: 0.4;
+  box-shadow: -8px 0 8px -8px var(--basic-black);
+  padding-left: 75px;
+  margin-left: 0px;
+  z-index: 1;
+  height: 224px;
 }
 
 .servicesList .checked {
@@ -771,15 +783,115 @@ h2, h3 {
   color: var(--dark-blue);
 }
 
-/* for about and contacts*/
-.transportCompanies {
+/* for info*/
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 65px;
+}
+
+.infoCompany {
+  width: 460px;
+}
+
+.info h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.info p {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.transportCompanies li {
+  position: relative;
   font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.transportCompanies li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -33px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--basic-red);
+}
+
+.btnInfo {
+  display: inline-block;
+  padding: 10px 40px 10px 40px;
+}
+
+.infoContacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.btnMap {
+  display: inline-block;
+  padding: 10px 45px;
 }
 
 /*for footer*/
 .pageFooter {
   background-color: var(--dark-blue);
   color: var(--grey-header-background);
+}
+
+.footerFirstLine, .footerSecondLine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 960px;
+}
+
+.footerFirstLine nav {
+  width: 560px;
+}
+
+.footerSecondLine nav {
+  width: 530px;
+}
+
+.footerLogo {
+  background-color: var(--basic-red);
+  width: 220px;
+  height: 68px;
+  box-shadow: inset 0px -5px 0px var(--footer-shadow);
+}
+
+.footerLogo img {
+  margin: 0;
+  padding-left: 41px;
+  padding-top: 20px;
+  padding-right: 41px;
+  padding-bottom: 25px;
+}
+
+.footerNavFisrt, .footerNavSecond {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px 25px 0px 25px;
+  width: 100%;
+}
+
+.footerNavFisrt:last-child, .footerNavSecond:last-child {
+  padding-right: 0;
+}
+
+.footerNavFisrt:first-child, .footerNavSecond:first-child {
+  padding-left: 0;
+}
+
+.footerNavFisrt {
+  margin-top: 40px;
 }
 
 .footerNavFisrt a,
@@ -791,6 +903,12 @@ h2, h3 {
   line-height: 24px;
 }
 
+.footerContacts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 320px;
+}
+
 .footerNavSecond a {
   color: var(--basic-yellow);
 }
@@ -799,8 +917,12 @@ h2, h3 {
   text-decoration: underline;
 }
 
-.footerNavFisrt li:focus, .footerNavSecond li:focus {
+.footerNavFisrt li:active,
+.footerNavSecond li:active,
+.footerNavFisrt li:focus,
+.footerNavSecond li:focus {
   opacity: 0.5;
+  text-decoration: none;
 }
 
 .footerLastLine {

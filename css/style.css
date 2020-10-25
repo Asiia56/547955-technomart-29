@@ -54,7 +54,7 @@
 }
 
 .container {
-  width: 960px;
+  width: 940px;
   margin: 0 auto;
   padding: 0;
 }
@@ -107,36 +107,47 @@ h2, h3 {
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
-  overflow: hidden
+  overflow: hidden;
 }
 
 /*styles for header*/
 .pageHeader {
   background-color: var(--grey-header-background);
+  margin-bottom: 60px;
 }
 
 .headerFirstLine {
   background-color: var(--very-dark-blue);
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 45px;
 }
 
 .headerFirstLine a {
   color: var(--basic-white);
 }
 
-.searchForm:active {
-  background-color: var(--basic-white);
-  color: var(--basic-black);
-}
-
-.searchForm:active .iconSearch {
-  color: var(--basic-red);
+.firstLineMenu {
+  display: flex;
+  height: 42px;
+  margin: 0 auto;
 }
 
 .mainLogo {
+  position: relative;
   width: 220px;
   height: 47px;
   background-color: var(--basic-red);
   box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.mainLogo img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .mainLogo:active {
@@ -151,6 +162,64 @@ h2, h3 {
   opacity: 1;
 }
 
+.searchForm:active {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
+}
+
+.searchForm:focus .iconSearch,
+.searchForm:active .iconSearch {
+  color: var(--basic-red);
+  fill-opacity: 1;
+}
+
+.searchForm:hover .iconSearch {
+  fill-opacity: 1;
+}
+
+.headerSearch {
+  background-color: inherit;
+  border: none;
+  color: var(--basic-white);
+  height: 42px;
+  width: 270px;
+}
+
+.headerSearch[value="Поиск:"] {
+  padding-left: 42px;
+}
+
+.searchField {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 270px;
+}
+
+.iconSearch {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  fill: var(--basic-white);
+  z-index: 100;
+}
+
+.bookCart {
+  width: 270px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  justify-content: space-between;
+}
+
+.bookCartItem {
+  justify-content: space-between;
+}
+
 .bookCart:focus {
   color: var(--basic-white-half);
 }
@@ -158,10 +227,21 @@ h2, h3 {
 .btnOrder {
   background-color: var(--basic-green);
   color: var(--basic-white);
+  border: none;
+  width: 150px;
+  margin-left: 20px;
 }
 
 .btnOrder:focus {
   opacity: 0.5;
+}
+
+.headerSecondLine {
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .description {
@@ -170,6 +250,24 @@ h2, h3 {
   line-height: 23px;
   align-items: center;
   color: var(--basic-red);
+  width: 210px;
+  margin: 0;
+  padding-left: 29px;
+}
+
+.headerContacts {
+  width: 270px;
+  margin-left: 27px;
+}
+
+.headerPhone::before {
+  margin-right: 15px;
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 20px;
+  background-image: url("../img/svg/icon-phone.svg");
+  background-repeat: no-repeat;
 }
 
 .headerPhone {
@@ -177,47 +275,55 @@ h2, h3 {
   font-size: 21px;
   line-height: 30px;
   text-align: center;
+  border: 3px solid var(--basic-white);
+  padding: 5px 28px 5px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
 .headerAdress {
   color: var(--dark-blue);
   font-size: 14px;
   text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
 }
 
-.siteNav {
-  background-color: var(--dark-blue);
-  font-size: 18px;
-  align-items: center;
+.enterMenu {
+  width: 300px;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.siteNav a {
-  color: var(--basic-white);
-  margin: 56px 0px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 21px;
+  line-height: 21px;
 }
 
 .login {
   background-color: var(--basic-white);
   color: var(--basic-black);
   height: 45px;
-  width: 121px;
   border-radius: 0px;
-  align-items: center;
   text-align: center;
   font-size: 21px;
   line-height: 21px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
 }
 
-.signUp {
-  height: 45px;
+.login img {
+  margin-left: -5px;
+  margin-right: 5px;
+}
+
+.signup {
   width: 150px;
-}
-
-.userName {
-  height: 45px;
-  width: 299px;
+  margin-left: 10px;
 }
 
 .login:hover {
@@ -226,6 +332,37 @@ h2, h3 {
 
 .login:focus {
   color: var(--basic-grey-light);
+}
+
+.headerNav {
+  box-shadow: inset 0px -5px 0px var(--basic-darkblue);
+  margin: 0 auto;
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.headerNav a {
+  color: var(--basic-white);
+  padding: 20px 28px 15px 28px;
+}
+
+.siteNav {
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 24px;
+}
+
+/* header cabinet*/
+.userName {
+  height: 45px;
+  width: 299px;
 }
 
 /*for .features*/
@@ -339,10 +476,10 @@ h2, h3 {
 }
 
 .featureItem {
+  position: relative;
   width: 300px;
   height: 123px;
   color: var(--basic-white);
-  font-size: 24px;
   line-height: 30px;
   z-index: 1;
   display: flex;
@@ -357,11 +494,13 @@ h2, h3 {
   text-transform: none;
   padding-left: 23px;
   margin: 17px 0 0;
+  font-size: 24px;
 }
 
 .materials {
   background-color: var(--light-braun-background);
   background-image: url("../img/features/icon-materials.svg");
+  overflow: hidden;
 }
 
 .tools {
@@ -704,7 +843,7 @@ h2, h3 {
 .deliveryService::before {
   position: absolute;
   content: "";
-  top: 0;
+  top: 50px;
   right: 0;
   background-repeat: no-repeat;
   background-image: url("../img/delivery-track.png");
@@ -851,6 +990,10 @@ h2, h3 {
   width: 960px;
 }
 
+.footerTop {
+  height: 196px;
+}
+
 .footerFirstLine nav {
   width: 560px;
 }
@@ -930,23 +1073,44 @@ h2, h3 {
   color: var(--basic-white);
 }
 
+.footerLastLineWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 960px;
+  height: 107px;
+}
+
+.footerCopyright {
+  font-size: 16px;
+  line-height: 18px;
+  margin: 0;
+}
+
 .social {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-left: 42px;
+  margin-top: 8px;
 }
 
-.socialBtn {
+.social li {
   width: 44px;
   height: 44px;
-  vertical-align: center;
-  text-align: center;
   background-color: var(--very-dark-blue-socialBtn);
   border-radius: 50%;
+  text-align: center;
 }
 
-.socialBtn span {}
+.social a {
+  text-decoration: none;
+}
 
-.socialBtn:hover,
-.socialBtn:focus {
+.social li:hover,
+.social li:focus {
   background-color: var(--basic-red);
 }
 

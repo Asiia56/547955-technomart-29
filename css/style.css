@@ -49,6 +49,7 @@
   --controls-shadow: #CFCFCF;
   --grey-bookCart: #F1F1F1;
   --dark-bookCart: #161D29;
+  --grey-radio: #B5B5B5;
 }
 
 /*basic*/
@@ -86,7 +87,7 @@ h2, h3 {
 }
 
 .btn {
-  cursor: pointer
+  cursor: pointer;
   font-size: 14px;
   line-height: 18px;
   color: var(--basic-white);
@@ -97,14 +98,6 @@ h2, h3 {
   border: none;
   outline: none;
   padding: 11px 24px 9px 24px;
-}
-
-.btn:hover {
-  background-color: var(--basic-red-hover);
-}
-
-.btn:focus {
-  background-color: var(--error);
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -256,7 +249,7 @@ h2, h3 {
 }
 
 .btnOrder:hover {
-background-color: var(--success);
+  background-color: var(--success);
 }
 
 .btnOrder:focus {
@@ -271,11 +264,10 @@ background-color: var(--success);
   margin-bottom: 25px;
 }
 
-.description {
+.description p {
   font-style: italic;
   font-size: 16px;
   line-height: 23px;
-  align-items: center;
   color: var(--basic-red);
   width: 210px;
   margin: 0;
@@ -390,18 +382,10 @@ background-color: var(--success);
 
 .siteNav a:focus {
   background-color: var(--very-dark-blue);
-opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* header cabinet*/
-.iconLogin {
-  margin-right: 20px;
-}
-
-.iconLogOut {
-  margin-left: 20px;
-}
-
 .userName {
   background-color: var(--basic-white);
   color: var(--basic-black);
@@ -414,13 +398,26 @@ opacity: 0.5;
   padding: 12px 0px 12px 0px;
 }
 
-.iconUser {
+.icon {
   fill: var(--basic-grey-light);
+}
+
+.icon:hover,
+.login:hover .icon,
+.userName:hover .icon {
+  fill: var(--basic-grey-blue);
+}
+
+.iconLogin {
+  margin-left: -5px;
+  margin-right: 5px;
+}
+
+.iconUser {
   margin-right: 20px;
 }
 
 .iconOff {
-  fill: var(--basic-grey-light);
   margin-left: 20px;
 }
 
@@ -449,11 +446,6 @@ opacity: 0.5;
 .loginItem a:focus,
 .loginItem a:active {
   color: var(--basic-grey-light);
-}
-
-.iconUser:hover,
-.iconOff:hover {
-  fill: var(--basic-grey-blue);
 }
 
 .userName:active,
@@ -523,6 +515,14 @@ opacity: 0.5;
   top: 201px;
   left: 24px;
   padding: 10px 46px 10px 46px;
+}
+
+.btnCatalog:hover {
+  background-color: var(--basic-red-hover);
+}
+
+.btnCatalog:focus {
+  background-color: var(--error);
 }
 
 .checkSlide {
@@ -709,7 +709,6 @@ opacity: 0.5;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
-  margin: 0 21px 0 35px;
 }
 
 .hoverOptions {
@@ -751,7 +750,7 @@ opacity: 0.5;
   border: 3px solid var(--basic-green);
   box-sizing: border-box;
   border-radius: 2px;
-  padding: 7px 30px 7px 30px;
+  padding: 7px 30px 7px 23px;
 }
 
 .popGoodsItem {
@@ -762,6 +761,8 @@ opacity: 0.5;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--grey-line);
+  box-sizing: border-box;
 }
 
 .newMark::after {
@@ -906,6 +907,8 @@ opacity: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid var(--grey-line);
+  box-sizing: border-box;
 }
 
 .popManufactorsItem:nth-child(4n) {
@@ -918,7 +921,8 @@ opacity: 0.5;
   box-shadow: 0px 4px 20px var(--shadow);
 }
 
-.popManufactorsItem:focus {
+.popManufactorsItem:focus,
+.popManufactorsItem:active {
   opacity: 0.5;
   box-shadow: 0px 4px 20px var(--shadow);
 }
@@ -1329,6 +1333,11 @@ opacity: 0.5;
   color: var(--basic-black);
 }
 
+.filterItem ul {
+  padding-left: 0;
+  margin: 0;
+}
+
 .filterItem legend {
   font-weight: bold;
   line-height: 30px;
@@ -1404,6 +1413,8 @@ opacity: 0.5;
 
 .priceControls {
   display: flex;
+  width: 220px;
+  justify-content: space-between;
 }
 
 .hyphen {
@@ -1427,11 +1438,106 @@ opacity: 0.5;
   border-radius: 4px;
 }
 
-.filterOption label {
+/*filter checkbox*/
+
+.filterCheckbox {
+  margin-bottom: 16px;
+}
+
+.filterInputCheckbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	margin: 10px 0 0 20px;
+}
+
+.filterInputCheckbox + label {
+	position: relative;
+	padding: 0 0 0 40px;
+	cursor: pointer;
+}
+
+.filterInputCheckbox + label:before {
+	content: '';
+	position: absolute;
+	top: -4px;
+	left: 7px;
+	width: 23px;
+	height: 23px;
+	border-radius: 3px;
+	background: var(--basic-white);
+  border: 2px solid var(--basic-grey-light);
+  box-sizing: border-box;
+	transition: .2s;
+}
+
+.filterInputCheckbox:checked + label:before {
+  content: '';
+	position: absolute;
+	top: -4px;
+	left: 7px;
+  background-color: transparent;
+  background-image: url(../img/svg/icon-checkbox-on.svg);
+  background-repeat: no-repeat;
+  border: none;
+}
+
+/*filter radiobutton*/
+
+.filterRadio {
+  margin-bottom: 16px;
+}
+
+.filterInputRadio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 7px;
+}
+
+.filterInputRadio+label {
   position: relative;
-  display: block;
+  padding: 0 0 0 40px;
   cursor: pointer;
-  user-select: none;
+}
+
+.filterInputRadio+label:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -3px;
+  width: 25px;
+  height: 25px;
+  border: 4px solid var(--basic-grey-light);
+  border-radius: 50%;
+  background: var(--basic-white);
+}
+
+.filterInputRadio+label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--basic-grey-light);
+  box-shadow: inset 0 1px 1px var(--basic-grey-light);
+  opacity: 0;
+  transition: .2s;
+}
+
+.filterInputRadio:checked+label:after {
+  opacity: 1;
+}
+
+.filterInputRadio:hover+label:after {
+  background: var(--grey-radio);
+  box-shadow: inset 0 1px 1px var(--basic-grey-radio);
+}
+
+.filterInputRadio:hover+label:before {
+  border: 4px solid var(--grey-radio);
 }
 
 .btnFilter {
@@ -1506,12 +1612,18 @@ opacity: 0.5;
 .sortList a:hover {
   color: var(--basic-black);
   border-bottom: 1px solid var(--basic-red);
+  opacity: 1;
 }
 
 .sortList:active a,
 .sortList:focus a {
   color: var(--basic-red);
   border: none;
+  opacity: 1;
+}
+
+.upDown {
+  fill: var(--basic-grey-light);
 }
 
 .activeUpDown {
@@ -1520,16 +1632,27 @@ opacity: 0.5;
   margin-right: 20px;
 }
 
+.upDown:hover {
+  fill: var(--basic-black);
+}
+
+.upDown:active,
+.upDown:focus {
+  fill: var(--basic-red);
+}
+
 /* catalog goods*/
 .goodsContainer {
   width: 700px;
 }
 
 .goodsList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   padding: 0;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 18px;
 }
 
 .articleFewWords {

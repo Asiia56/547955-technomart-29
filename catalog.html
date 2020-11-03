@@ -16,7 +16,7 @@
     <div class="headerFirstLine">
       <div class="container firstLineMenu">
         <a class="mainLogo" href="index.html"> <img src="img/svg/logo-technomart.svg" width="108" height="18" alt="Техномарт"> </a>
-        <form class="searchForm">
+        <form class="searchForm" method="get" action="https://echo.htmlacademy.ru" target="_blank">
           <label for="search" class="searchField">
             <a href="#">
               <svg aria-hidden="true" focusable="false" class="iconHeader iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,16 +27,16 @@
             <input class="headerSearch" type="text" name="search" id="search" value="Поиск:">
           </label>
         </form>
-        <div class="bookCart">
-          <div>
+        <ul class="bookCart">
+          <li class="bookCartItem">
             <img src="img/svg/icon-bookmark.svg" width="14" height="16" class="iconHeader" alt="icon-bookmark" />
             <a href="#">Закладки: 0</a>
-          </div>
-          <div class="bookCartActive">
-            <img src="img/svg/icon-cart.svg" width="15" height="15" class="iconHeader" alt="icon-cart" />
+          </li>
+          <li class="bookCartActive">
+            <img src="img/svg/icon-cart.svg" width="15" height="15" class="iconHeader bookCartActive" alt="icon-cart" />
             <a href="#">Корзина: 10</a>
-          </div>
-        </div>
+          </li>
+        </ul>
         <button type="button" class="btnOrder">Оформить заказ </button>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <div class="headerContacts">
         <a href="tel:+78125550555" class="headerPhone">+7 (812) 555-05-55</a>
         <p class="headerAdress">
-          г. Санкт-Петербург, Б. Конюшенная, д. 19/8
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
         </p>
       </div>
       <div class="loginMenu">
@@ -366,7 +366,7 @@
         <div class="footerFirstLine">
           <a href="index.html" class="footerLogo"> <img src="img/svg/logo-footer.svg" width="138" height="23" alt="Техномарт"> </a>
           <nav>
-            <ul class="footerNavFisrt">
+            <ul class="footerNav footerNavFisrt">
               <li><a href="blank.html">Компания</a></li>
               <li><a href="blank.html">Новости</a></li>
               <li><a href="catalog.html">Каталог</a></li>
@@ -378,11 +378,11 @@
         <!-- Второй блок Footer'a-->
         <div class="footerSecondLine">
           <p class="footerContacts">
-            г. Санкт-Петербург, Б. Конюшенная, д. 19/8
+            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
             <a href="tel:+78125550555">+7 (812) 555-05-55</a>
           </p>
           <nav>
-            <ul class="footerNavSecond">
+            <ul class="footerNav footerNavSecond">
               <li><a href="blank.html">Материалы</a></li>
               <li><a href="blank.html">Техника</a></li>
               <li><a href="blank.html">Инструмент</a></li>
@@ -396,7 +396,7 @@
     <section class="footerLastLine">
       <h3 class="visually-hidden">Авторство</h3>
       <div class="container footerLastLineWrapper">
-        <p class="footerCopyright">
+        <p class="footerCopyrightMark">
           © 2010–2019 Компания &laquo;Техномарт&raquo;<br />
           Все права защищены
         </p>
@@ -430,14 +430,16 @@
             </a>
           </li>
         </ul>
-        <p class="footerCopyright">
-          Обратная связь:<br />
-          <a class="reference" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-        </p>
-        <p class="footerCopyright">
-          Разработано - <br />
-          <a class="reference" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
-        </p>
+        <div class="footerCopyright">
+          <p>
+            Обратная связь:<br />
+            <a class="reference" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+          </p>
+          <p>
+            Разработано - <br />
+            <a class="reference" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+          </p>
+        </div>
       </div>
     </section>
   </footer>

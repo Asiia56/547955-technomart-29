@@ -16,10 +16,10 @@
     <div class="headerFirstLine">
       <div class="container firstLineMenu">
         <a class="mainLogo" href="index.html"> <img src="img/svg/logo-technomart.svg" width="108" height="18" alt="Техномарт"> </a>
-        <form class="searchForm">
+        <form class="searchForm" method="get" action="https://echo.htmlacademy.ru" target="_blank">
           <label for="search" class="searchField">
             <a href="#">
-              <svg aria-hidden="true" focusable="false" class="iconHeader iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" focusable="false" class="iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" />
               </svg>
@@ -27,16 +27,16 @@
             <input class="headerSearch" type="text" name="search" id="search" value="Поиск:">
           </label>
         </form>
-        <div class="bookCart">
-          <div>
+        <ul class="bookCart">
+          <li class="bookCartItem">
             <img src="img/svg/icon-bookmark.svg" width="14" height="16" class="iconHeader" alt="icon-bookmark" />
             <a href="#">Закладки: 0</a>
-          </div>
-          <div>
+          </li>
+          <li>
             <img src="img/svg/icon-cart.svg" width="15" height="15" class="iconHeader" alt="icon-cart" />
             <a href="#">Корзина: 0</a>
-          </div>
-        </div>
+          </li>
+        </ul>
         <button type="button" class="btnOrder">Оформить заказ </button>
       </div>
     </div>
@@ -51,7 +51,7 @@
       <div class="headerContacts">
         <a href="tel:+78125550555" class="headerPhone">+7 (812) 555-05-55</a>
         <p class="headerAdress">
-          г. Санкт-Петербург, Б. Конюшенная, д. 19/8
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
         </p>
       </div>
       <div class="enterMenu">
@@ -133,7 +133,7 @@
     <section class="popGoods container">
       <div class="popHeader">
         <h2>Популярные товары:</h2>
-        <a class="btn btnPops" href="#">Все популярные товары</a>
+        <a class="btn btnPopGoods" href="#">Все популярные товары</a>
       </div>
       <ul class="popGoodsList">
         <li class="popGoodsItem">
@@ -148,7 +148,7 @@
             <h4>Перфоратор BOSCH<br /> BFG 9000</h4>
           </a>
           <p class="oldPrice">32500 Р.</p>
-          <button class="btn btnNewPrice" type="button">25500 ₽</button>
+          <button class="btn btnNewPrice" type="button">25500 P.</button>
         </li>
         <li class="popGoodsItem newMark">
           <div class="hoverOptions">
@@ -176,7 +176,7 @@
             <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
           </a>
           <p class="oldPrice">30500 Р.</p>
-          <button class="btn btnNewPrice" type="button">25500 ₽</button>
+          <button class="btn btnNewPrice" type="button">25500 Р.</button>
         </li>
         <li class="popGoodsItem newMark">
           <div class="hoverOptions">
@@ -189,6 +189,7 @@
             </p>
             <h4>Перфоратор BOSCH<br /> BFG 2000</h4>
           </a>
+          <p class="oldPrice">22500 Р.</p>
           <button class="btn btnNewPrice" type="button">12500 Р.</button>
         </li>
       </ul>
@@ -206,13 +207,13 @@
           <a href="#"> <img src="img/manufactors/makita.jpg" width="123" height="40" alt="makita"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/dewalt.jpg" width="126" height="44" alt="dewalt"> </a>
+          <a href="#"> <img src="img/manufactors/dewalt.png" width="146" height="44" alt="dewalt"> </a>
         </li>
         <li class="popManufactorsItem">
           <a href="#"> <img src="img/manufactors/Интерскол1.jpg" width="200" height="76" alt="interskol"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/hitachi.jpg" width="169" height="31" alt="hitachi"> </a>
+          <a href="#"> <img src="img/manufactors/hitachi.png" width="169" height="31" alt="hitachi"> </a>
         </li>
         <li class="popManufactorsItem">
           <a href="#"> <img src="img/manufactors/LG.jpg" width="121" height="73" alt="lg"> </a>
@@ -228,7 +229,7 @@
     <section class="services">
       <div class="container">
         <h2>Сервисы</h2>
-        <p>Хороший интернет-магазин отличается от плохого не только ценами! <br />
+        <p class="servicesMargin">Хороший интернет-магазин отличается от плохого не только ценами! <br />
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными </p>
         <div class="servicesSlider">
           <ul class="servicesList">
@@ -275,8 +276,7 @@
         <p>Вы можете забрать товар сами, <br />
           заехав в наш офис: </p>
         <img src="img/map.jpg" width="300" height="158" alt="Карта" />
-        <iframe class="contactsMap visually-hidden" src="#" title="map"> </iframe>
-        <p> <a class="btn btnMap" href="#">Заблудились? Напишите нам!</a> </p>
+        <a class="btn btnMap" href="#">Заблудились? Напишите нам!</a>
       </div>
     </section>
   </main>
@@ -288,7 +288,7 @@
         <div class="footerFirstLine">
           <a href="index.html" class="footerLogo"> <img src="img/svg/logo-footer.svg" width="138" height="23" alt="Техномарт"> </a>
           <nav>
-            <ul class="footerNavFisrt">
+            <ul class="footerNav footerNavFisrt">
               <li><a href="blank.html">Компания</a></li>
               <li><a href="blank.html">Новости</a></li>
               <li><a href="catalog.html">Каталог</a></li>
@@ -300,15 +300,15 @@
         <!-- Второй блок Footer'a-->
         <div class="footerSecondLine">
           <p class="footerContacts">
-            г. Санкт-Петербург, Б. Конюшенная, д. 19/8
+            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br />
             <a href="tel:+78125550555">+7 (812) 555-05-55</a>
           </p>
           <nav>
-            <ul class="footerNavSecond">
+            <ul class="footerNav footerNavSecond">
               <li><a href="blank.html">Материалы</a></li>
               <li><a href="blank.html">Техника</a></li>
               <li><a href="blank.html">Инструмент</a></li>
-              <li><a href="blank.html">Спецпредложение</a></li>
+              <li><a href="blank.html">Спецпредложения</a></li>
             </ul>
           </nav>
         </div>
@@ -318,7 +318,7 @@
     <section class="footerLastLine">
       <h3 class="visually-hidden">Авторство</h3>
       <div class="container footerLastLineWrapper">
-        <p class="footerCopyright">
+        <p class="footerCopyrightMark">
           © 2010–2019 Компания &laquo;Техномарт&raquo;<br />
           Все права защищены
         </p>
@@ -352,14 +352,16 @@
             </a>
           </li>
         </ul>
-        <p class="footerCopyright">
-          Обратная связь:<br />
-          <a class="reference" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-        </p>
-        <p class="footerCopyright">
-          Разработано - <br />
-          <a class="reference" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
-        </p>
+        <div class="footerCopyright">
+          <p>
+            Обратная связь:<br />
+            <a class="reference" href="mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+          </p>
+          <p>
+            Разработано - <br />
+            <a class="reference" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
+          </p>
+        </div>
       </div>
     </section>
   </footer>

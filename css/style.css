@@ -116,6 +116,7 @@ h2, h3 {
 /*styles for header*/
 .pageHeader {
   background-color: var(--grey-header-background);
+  padding-bottom: 58px;
 }
 
 .headerFirstLine {
@@ -159,8 +160,14 @@ h2, h3 {
   margin-right: 10px;
 }
 
-.iconHeader:hover {
+.iconHeader:hover,
+.iconHeaderCart:hover {
   opacity: 1;
+}
+
+.iconHeaderCart {
+    opacity: 0.3;
+    margin-right: 5px;
 }
 
 .iconSearch {
@@ -227,7 +234,7 @@ h2, h3 {
 }
 
 .bookCart li:nth-child(2) {
-  padding: 9px 25px 9px 15px;
+  padding: 9px 20px 9px 15px;
 }
 
 .bookCartActive {
@@ -263,7 +270,7 @@ h2, h3 {
   justify-content: space-between;
   width: 940px;
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 }
 
 .description p {
@@ -357,13 +364,13 @@ h2, h3 {
 .headerNav {
   margin: 0 auto;
   font-size: 18px;
-  shadow: inset 0px -5px 0px var(--very-dark-blue);
-  padding-bottom: 55px;
+  box-shadow: inset 0px -5px 0px var(--very-dark-blue);
 }
 
 .headerNav a {
   color: var(--basic-white);
-  padding: 20px 28px 15px 28px;
+  padding: 11px 28px 13px 28px;
+  display: block;
 }
 
 .siteNav {
@@ -1077,7 +1084,7 @@ h2, h3 {
 
 /* for info*/
 .info {
-  margin-bottom: 65px;
+  margin-bottom: 70px;
   display: grid;
   justify-content: space-between;
   grid-template-columns: 1fr 1fr;
@@ -1170,14 +1177,15 @@ h2, h3 {
 
 .footerFirstLine nav {
   width: 565px;
+  margin-top: -2px;
 }
 
 .footerSecondLine nav {
-  width: 530px;
+  width: 545px;
 }
 
 .footerTop {
-  height: 196px;
+  height: 192px;
 }
 
 .footerLogo {
@@ -1220,6 +1228,7 @@ h2, h3 {
   flex-wrap: wrap;
   width: 330px;
   padding-left: 2px;
+  margin-top: 12px;
 }
 
 .footerNavSecond a {
@@ -1442,8 +1451,7 @@ h2, h3 {
 
 .rangeControls .toggle {
   position: absolute;
-  top: 29px;
-  left: 0;
+  top: 36px;
   width: 4px;
   height: 4px;
   padding: 0;
@@ -1474,7 +1482,7 @@ h2, h3 {
 }
 
 .priceOutput {
-  padding: 10px 15px 10px 0px;
+  padding: 10px 7px 10px 7px;
   background-color: var(--light-background);
   width: 80px;
   font-family: "PT Sans", "Arial", sans-serif;
@@ -1486,6 +1494,21 @@ h2, h3 {
   outline: none;
   text-align: center;
   border-radius: 4px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
 }
 
 /*filter checkbox*/
@@ -1712,6 +1735,7 @@ h2, h3 {
   font-size: 30px;
   line-height: 30px;
   font-weight: 400;
+  font-family: "Cuprum", "Arial", sans-serif;
 }
 
 .articleFewWords p {

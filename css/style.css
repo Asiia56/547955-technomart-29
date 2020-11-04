@@ -114,6 +114,10 @@ h2, h3 {
 }
 
 /*styles for header*/
+.mainHeader {
+  margin-bottom: 65px;
+}
+
 .pageHeader {
   background-color: var(--grey-header-background);
   padding-bottom: 58px;

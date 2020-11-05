@@ -170,8 +170,8 @@ h2, h3 {
 }
 
 .iconHeaderCart {
-    opacity: 0.3;
-    margin-right: 5px;
+  opacity: 0.3;
+  margin-right: 5px;
 }
 
 .iconSearch {
@@ -237,12 +237,13 @@ h2, h3 {
   padding: 9px 15px 9px 15px;
 }
 
-.bookCart li:nth-child(2) {
-  padding: 9px 20px 9px 15px;
+.bookCartNotActive {
+  padding: 9px 25px 9px 15px;
 }
 
 .bookCartActive {
   background-color: var(--basic-red);
+  padding: 9px 20px 9px 15px;
 }
 
 .bookCart:focus {
@@ -369,16 +370,17 @@ h2, h3 {
   margin: 0 auto;
   font-size: 18px;
   box-shadow: inset 0px -5px 0px var(--very-dark-blue);
+  margin: 0 auto;
+  background-color: var(--dark-blue);
 }
 
 .headerNav a {
   color: var(--basic-white);
-  padding: 11px 28px 13px 28px;
+  padding: 18px 28px;
   display: block;
 }
 
 .siteNav {
-  background-color: var(--dark-blue);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1042,45 +1044,52 @@ h2, h3 {
   position: relative;
   padding: 0;
   margin: 0;
-  margin-top: 24px;
-  margin-left: -2px;
+  margin-top: 21px;
 }
 
-.servicesList li {
+.servicesItem {
   cursor: pointer;
   background: var(--dark-blue);
   box-shadow: 0 1px 0 var(--very-dark-blue);
-  color: var(--basic-white);
+  min-width: 242px;
+  box-sizing: border-box;
+}
+
+.servicesItem a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 142px 22px 25px;
   font-size: 21px;
   line-height: 30px;
   font-weight: bold;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 9px 142px 22px 25px;
-  min-width: 245px;
-  box-sizing: border-box;
+  color: var(--basic-white);
+}
+
+.servicesItem:nth-child(n+2) {
+  box-shadow: inset 0px 1px 0px var(--gray-blue),
+    0px -1px 0px var(--very-dark-blue);
 }
 
 .servicesSlide {
   box-shadow: -8px 0 6px -8px var(--basic-black);
   padding-left: 71px;
-  margin-left: 4px;
+  margin-left: 3px;
   z-index: 1;
   height: 224px;
 }
 
-.servicesList .checked {
+.checked a {
   background-color: var(--basic-white);
-  box-shadow: 0 1px 0 var(--basic-white);
+  box-shadow: inset 0px 1px 0px var(--basic-white);
   color: var(--dark-blue);
 }
 
-.servicesList li:hover:not(.checked) {
+.servicesItem:hover:not(.checked) {
   background: var(--very-dark-blue);
   box-shadow: 0 1px 0 var(--very-dark-blue);
 }
 
-.servicesList li:active {
+.servicesItem:active {
   background-color: var(--basic-white);
   box-shadow: 0 1px 0 var(--basic-white);
   color: var(--dark-blue);
@@ -1658,7 +1667,8 @@ input[type="number"]:focus {
 }
 
 .sortList li {
-  margin-right: 68px;
+  margin-right: 70px;
+  margin-bottom: 4px;
 }
 
 .sortList a {

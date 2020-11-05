@@ -1058,7 +1058,9 @@ h2, h3 {
 .servicesItem a {
   display: inline-block;
   vertical-align: middle;
-  padding: 10px 142px 22px 25px;
+  padding: 15px 22px;
+    width: 100%;
+    box-sizing: border-box;
   font-size: 21px;
   line-height: 30px;
   font-weight: bold;

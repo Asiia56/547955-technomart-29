@@ -173,7 +173,7 @@ h2, h3 {
 }
 
 .btnBookCart:focus,
-.bookCartActive:focus{
+.bookCartActive:focus {
   opacity: 0.3;
 }
 
@@ -407,7 +407,7 @@ h2, h3 {
 }
 
 .siteNav .siteNavCurrent:hover {
-background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .siteNav a:focus {
@@ -624,7 +624,6 @@ background-color: var(--dark-blue);
 }
 
 .slide img {
-
   background-color: var(--grey-third);
 }
 
@@ -1081,8 +1080,8 @@ background-color: var(--dark-blue);
   display: inline-block;
   vertical-align: middle;
   padding: 15px 22px;
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
   font-size: 21px;
   line-height: 30px;
   font-weight: bold;
@@ -1323,8 +1322,8 @@ background-color: var(--dark-blue);
   padding: 0;
   margin-left: 42px;
   margin-top: 8px;
-width: 220px;
-flex-wrap: wrap;
+  width: 220px;
+  flex-wrap: wrap;
 }
 
 .social li {
@@ -1955,7 +1954,7 @@ input[type="number"]:focus {
   height: 38px;
   width: 220px;
   margin-top: 11px;
-      padding-left: 12px;
+  padding-left: 12px;
 }
 
 .writeUsForm textarea {

@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="page">
@@ -18,23 +18,23 @@
         <a class="mainLogo" href="#"> <img src="img/svg/logo-technomart.svg" width="108" height="18" alt="Техномарт"> </a>
         <form class="searchForm" method="get" action="https://echo.htmlacademy.ru" target="_blank">
           <label for="search" class="searchField">
+            <input class="headerSearch" type="text" name="search" id="search" placeholder="Поиск:">
             <a href="#">
               <svg aria-hidden="true" focusable="false" class="iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" />
               </svg>
             </a>
-            <input class="headerSearch" type="text" name="search" id="search" value="Поиск:">
           </label>
         </form>
         <ul class="bookCart">
           <li class="bookCartItem">
             <img src="img/svg/icon-bookmark.svg" width="14" height="16" class="iconHeader" alt="icon-bookmark" />
-            <a href="#">Закладки: 0</a>
+            <a href="#" class="btnBookCartItem">Закладки: 0</a>
           </li>
           <li class="bookCartNotActive">
             <img src="img/svg/icon-cart.svg" width="15" height="15" class="iconHeaderCart" alt="icon-cart" />
-            <a href="#">Корзина: 0</a>
+            <a href="#" class="btnBookCartItem">Корзина: 0</a>
           </li>
         </ul>
         <button type="button" class="btnOrder">Оформить заказ </button>
@@ -68,7 +68,7 @@
     <!-- Третий блок Header'a -->
     <nav class="container headerNav">
       <ul class="siteNav">
-        <li><a href="index.html">Главная</a></li>
+        <li><a class="siteNavCurrent">Главная</a></li>
         <li><a href="blank.html">Компания</a></li>
         <li><a href="catalog.html">Каталог</a></li>
         <li><a href="blank.html">Новости</a></li>
@@ -143,7 +143,7 @@
           </div>
           <a href="#">
             <p class="imgWrapper">
-              <img src="img/goods/bfg_9000.jpg" width="185" height="164" alt="BOSCH BFG 9000">
+              <img src="img/goods/bfg-9000.jpg" width="185" height="164" alt="BOSCH BFG 9000">
             </p>
             <h4>Перфоратор BOSCH<br /> BFG 9000</h4>
           </a>
@@ -157,7 +157,7 @@
           </div>
           <a href="#">
             <p class="imgWrapper">
-              <img src="img/goods/bfg_3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
+              <img src="img/goods/bfg-3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
             </p>
             <h4>Перфоратор BOSCH<br /> BFG 3000</h4>
           </a>
@@ -171,7 +171,7 @@
           </div>
           <a href="#">
             <p class="imgWrapper">
-              <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+              <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
             </p>
             <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
           </a>
@@ -185,7 +185,7 @@
           </div>
           <a href="#">
             <p class="imgWrapper">
-              <img src="img/goods/bfg_2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
+              <img src="img/goods/bfg-2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
             </p>
             <h4>Перфоратор BOSCH<br /> BFG 2000</h4>
           </a>
@@ -201,28 +201,28 @@
       </div>
       <ul class="popManufactorsList">
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/bosch.jpg" width="126" height="37" alt="bosch"> </a>
+          <a href="#"> <img src="img/manufactors/bosch.jpg" width="126" height="37" alt="Bosch"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/makita.jpg" width="123" height="40" alt="makita"> </a>
+          <a href="#"> <img src="img/manufactors/makita.jpg" width="123" height="40" alt="Makita"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/dewalt.png" width="146" height="44" alt="dewalt"> </a>
+          <a href="#"> <img src="img/manufactors/dewalt.png" width="146" height="44" alt="Dewalt"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/Интерскол1.jpg" width="200" height="76" alt="interskol"> </a>
+          <a href="#"> <img src="img/manufactors/interskol.jpg" width="200" height="76" alt="Интерскол"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/hitachi.png" width="169" height="31" alt="hitachi"> </a>
+          <a href="#"> <img src="img/manufactors/hitachi.png" width="169" height="31" alt="Hitachi"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/LG.jpg" width="121" height="73" alt="lg"> </a>
+          <a href="#"> <img src="img/manufactors/lg.jpg" width="121" height="73" alt="LG"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/AEG.jpg" width="151" height="98" alt="aeg"> </a>
+          <a href="#"> <img src="img/manufactors/aeg.jpg" width="151" height="98" alt="AEG"> </a>
         </li>
         <li class="popManufactorsItem">
-          <a href="#"> <img src="img/manufactors/Metabo.jpg" width="206" height="73" alt="metabo"> </a>
+          <a href="#"> <img src="img/manufactors/metabo.jpg" width="206" height="73" alt="Metabo"> </a>
         </li>
       </ul>
     </section>
@@ -275,7 +275,7 @@
         <h2>Контакты</h2>
         <p>Вы можете забрать товар сами, <br />
           заехав в наш офис: </p>
-        <img src="img/map.jpg" width="300" height="158" alt="Карта" />
+        <a href="#"><img src="img/map.jpg" width="300" height="158" alt="Карта" /></a>
         <a class="btn btnMap" href="#">Заблудились? Напишите нам!</a>
       </div>
     </section>
@@ -289,11 +289,11 @@
           <a href="index.html" class="footerLogo"> <img src="img/svg/logo-footer.svg" width="138" height="23" alt="Техномарт"> </a>
           <nav>
             <ul class="footerNav footerNavFisrt">
-              <li><a href="blank.html">Компания</a></li>
-              <li><a href="blank.html">Новости</a></li>
-              <li><a href="catalog.html">Каталог</a></li>
-              <li><a href="blank.html">Доставка</a></li>
-              <li><a href="blank.html">Контакты</a></li>
+              <li class="footerNavItem"><a href="blank.html">Компания</a></li>
+              <li class="footerNavItem"><a href="blank.html">Новости</a></li>
+              <li class="footerNavItem"><a href="catalog.html">Каталог</a></li>
+              <li class="footerNavItem"><a href="blank.html">Доставка</a></li>
+              <li class="footerNavItem"><a href="blank.html">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -305,10 +305,10 @@
           </p>
           <nav>
             <ul class="footerNav footerNavSecond">
-              <li><a href="blank.html">Материалы</a></li>
-              <li><a href="blank.html">Техника</a></li>
-              <li><a href="blank.html">Инструмент</a></li>
-              <li><a href="blank.html">Спецпредложения</a></li>
+              <li class="footerNavItem"><a href="blank.html">Материалы</a></li>
+              <li class="footerNavItem"><a href="blank.html">Техника</a></li>
+              <li class="footerNavItem"><a href="blank.html">Инструмент</a></li>
+              <li class="footerNavItem"><a href="blank.html">Спецпредложения</a></li>
             </ul>
           </nav>
         </div>
@@ -381,7 +381,7 @@
       </div>
       <div class="writeUsLoginTextArea">
         <label class="labelForm" for="letter-field">Текст письма:</label>
-        <textarea class="inputBox" id="letter-field" name="letter" rows="4">В свободной форме</textarea>
+        <textarea class="inputBox" id="letter-field" name="letter" rows="4" placeholder="В свободной форме"></textarea>
       </div>
       <div class="lineSubmit">
         <input class="btn btnSubmit" type="submit" value="Отправить" />
@@ -389,7 +389,7 @@
     </form>
   </section>
   <section class="mapPopUp popUp">
-    <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" alt="close" aria-label="Закрыть" /></button>
+    <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" width="21" height="21" alt="close" aria-label="Закрыть" /></button>
     <h2 class="visually-hidden">Как добраться</h2>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426"

@@ -5,6 +5,7 @@
   --basic-white-half: rgba(255, 255, 255, 0.5);
   --basic-white-third: rgba(255, 255, 255, 0.3);
   --shadow: rgba(0, 0, 0, 0.15);
+  --grey-third: rgba(0, 0, 0, 0.25);
   --basic-black: #000000;
   --basic-red: #EE3643;
   --basic-red-hover: #CA2C37;
@@ -165,8 +166,15 @@ h2, h3 {
 }
 
 .iconHeader:hover,
-.iconHeaderCart:hover {
+.iconHeaderCart:hover,
+.btnBookCart:hover .iconHeader,
+.btnBookCart:hover .iconHeaderCart {
   opacity: 1;
+}
+
+.btnBookCart:focus,
+.bookCartActive:focus{
+  opacity: 0.3;
 }
 
 .iconHeaderCart {
@@ -183,13 +191,6 @@ h2, h3 {
   fill-opacity: 0.3;
 }
 
-.searchForm:focus .iconSearch,
-.searchForm:active .iconSearch {
-  fill: var(--basic-red);
-  fill-opacity: 1;
-  z-index: 100;
-}
-
 .searchForm:hover .iconSearch {
   fill-opacity: 1;
 }
@@ -202,7 +203,7 @@ h2, h3 {
   width: 270px;
 }
 
-.headerSearch[value="Поиск:"] {
+.headerSearch[placeholder="Поиск:"] {
   padding-left: 42px;
 }
 
@@ -212,6 +213,14 @@ h2, h3 {
   color: var(--basic-black);
   border: none;
   outline: none;
+}
+
+.searchField:focus .iconSearch,
+.searchField:active .iconSearch,
+.iconSearch:focus {
+  fill: var(--basic-red);
+  fill-opacity: 1;
+  z-index: 100;
 }
 
 .searchField {
@@ -297,6 +306,7 @@ h2, h3 {
   margin-right: 15px;
   content: "";
   display: inline-block;
+  vertical-align: middle;
   width: 19px;
   height: 20px;
   background-image: url("../img/svg/icon-phone.svg");
@@ -396,6 +406,10 @@ h2, h3 {
   background-color: var(--very-dark-blue);
 }
 
+.siteNav .siteNavCurrent:hover {
+background-color: var(--dark-blue);
+}
+
 .siteNav a:focus {
   background-color: var(--very-dark-blue);
   opacity: 0.5;
@@ -411,16 +425,20 @@ h2, h3 {
   justify-content: center;
   align-items: center;
   width: 300px;
-  padding: 12px 0px 12px 0px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.userName span {
+  max-width: 70%;
 }
 
 .icon {
   fill: var(--basic-grey-light);
 }
 
-.icon:hover,
-.login:hover .icon,
-.userName:hover .icon {
+.userName:hover .iconUser,
+.iconOff:hover {
   fill: var(--basic-grey-blue);
 }
 
@@ -446,6 +464,7 @@ h2, h3 {
 
 .loginItem {
   display: inline-block;
+  vertical-align: middle;
   font-size: 16px;
   line-height: 18px;
 }
@@ -534,11 +553,15 @@ h2, h3 {
   padding: 10px 46px 10px 46px;
 }
 
-.btnCatalog:hover {
+.btnCatalog:hover,
+.btnPopGoods:hover,
+.btnPops:hover {
   background-color: var(--basic-red-hover);
 }
 
-.btnCatalog:focus {
+.btnCatalog:focus,
+.btnPopGoods:focus,
+.btnPops:focus {
   background-color: var(--error);
 }
 
@@ -598,6 +621,11 @@ h2, h3 {
 
 .slide {
   margin: 0;
+}
+
+.slide img {
+
+  background-color: var(--grey-third);
 }
 
 .currentSlide {
@@ -689,14 +717,6 @@ h2, h3 {
   background-color: var(--basic-grey-middle-third);
 }
 
-.btnCatalog:hover {
-  background-color: var(--basic-red-hover);
-}
-
-.btnCatalog:focus {
-  background-color: var(--error);
-}
-
 /*for .popGoods*/
 .popGoods {
   margin-bottom: 70px;
@@ -758,6 +778,7 @@ h2, h3 {
 .btnBuy::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
   width: 15px;
   height: 15px;
   background-image: url("../img/svg/icon-cart.svg");
@@ -939,6 +960,7 @@ h2, h3 {
   align-items: center;
   border: 1px solid var(--grey-line);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .popManufactorsItem:nth-child(4n) {
@@ -1155,6 +1177,7 @@ h2, h3 {
 
 .btnInfo {
   display: inline-block;
+  vertical-align: middle;
   padding: 10px 40px 10px 40px;
   margin-top: 20px;
 }
@@ -1177,6 +1200,16 @@ h2, h3 {
   padding: 10px 62px 10px 61px;
 }
 
+.btnInfo:hover,
+.btnMap:hover {
+  background-color: var(--basic-red-hover);
+}
+
+.btnInfo:focus,
+.btnMap:focus {
+  background-color: var(--error);
+}
+
 /*for footer*/
 .pageFooter {
   background-color: var(--dark-blue);
@@ -1191,12 +1224,7 @@ h2, h3 {
 }
 
 .footerFirstLine nav {
-  width: 565px;
-  margin-top: -2px;
-}
-
-.footerSecondLine nav {
-  width: 545px;
+  margin-top: -5px;
 }
 
 .footerTop {
@@ -1220,13 +1248,21 @@ h2, h3 {
 .footerNav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 0;
   margin-right: 20px;
 }
 
 .footerNavFisrt {
   margin-top: 40px;
+}
+
+.footerNavItem {
+  margin-left: 60px;
+}
+
+.footerNavItem:first-child {
+  margin-left: 0;
 }
 
 .footerNavFisrt a,
@@ -1283,10 +1319,12 @@ h2, h3 {
 .social {
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0;
   margin-left: 42px;
-  margin-top: 19px;
+  margin-top: 8px;
+width: 220px;
+flex-wrap: wrap;
 }
 
 .social li {
@@ -1558,11 +1596,25 @@ input[type="number"]:focus {
   transition: .2s;
 }
 
-.filterInputCheckbox:checked+label:before {
+.filterInputCheckbox:checked+label::before {
   background-color: transparent;
   background-image: url(../img/svg/icon-checkbox-on.svg);
+  fill: var(--basic-grey-light);
   background-repeat: no-repeat;
   border: none;
+}
+
+.filterInputCheckbox:hover(:checked)+label::before {
+  background-color: transparent;
+  background-image: url(../img/svg/icon-checkbox-on.svg);
+  fill: var(--grey-radio);
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.filterInputCheckbox:disabled+label::before {
+  opacity: 0.4;
+  background: var(--basic-black);
 }
 
 /*filter radiobutton*/
@@ -1583,7 +1635,7 @@ input[type="number"]:focus {
   cursor: pointer;
 }
 
-.filterInputRadio+label:before {
+.filterInputRadio+label::before {
   content: '';
   position: absolute;
   top: -7px;
@@ -1595,7 +1647,7 @@ input[type="number"]:focus {
   background: var(--basic-white);
 }
 
-.filterInputRadio+label:after {
+.filterInputRadio+label::after {
   content: '';
   position: absolute;
   top: 3px;
@@ -1609,17 +1661,29 @@ input[type="number"]:focus {
   transition: .2s;
 }
 
-.filterInputRadio:checked+label:after {
+.filterInputRadio:checked+label::after {
   opacity: 1;
 }
 
-.filterInputRadio:hover+label:after {
+.filterInputRadio:hover+label::after {
   background: var(--grey-radio);
   box-shadow: inset 0 1px 1px var(--basic-grey-radio);
 }
 
-.filterInputRadio:hover+label:before {
+.filterInputRadio:hover+label::before {
   border: 4px solid var(--grey-radio);
+}
+
+.filterInputRadio:disabled+label::before {
+  opacity: 0.4;
+  background: var(--basic-black);
+  border: 4px solid var(--basic-black);
+}
+
+.filterInputRadio:disabled+label::after {
+  opacity: 0.4;
+  background: var(--basic-black);
+  box-shadow: inset 0 1px 1px var(--basic-black);
 }
 
 .btnFilter {
@@ -1786,6 +1850,7 @@ input[type="number"]:focus {
   line-height: 18px;
   color: var(--basic-black);
   display: inline-block;
+  vertical-align: middle;
   padding: 10px 15px 10px 15px;
 }
 
@@ -1890,6 +1955,7 @@ input[type="number"]:focus {
   height: 38px;
   width: 220px;
   margin-top: 11px;
+      padding-left: 12px;
 }
 
 .writeUsForm textarea {

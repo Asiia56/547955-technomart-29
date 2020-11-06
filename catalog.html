@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="page">
@@ -18,23 +18,23 @@
         <a class="mainLogo" href="index.html"> <img src="img/svg/logo-technomart.svg" width="108" height="18" alt="Техномарт"> </a>
         <form class="searchForm" method="get" action="https://echo.htmlacademy.ru" target="_blank">
           <label for="search" class="searchField">
+            <input class="headerSearch" type="text" name="search" id="search" placeholder="Поиск:">
             <a href="#">
-              <svg aria-hidden="true" focusable="false" class="iconHeader iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg aria-hidden="true" focusable="false" class="iconSearch" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M13.458 12.044L17 15.586L15.586 17L12.044 13.458C10.782 14.421 9.21 15 7.5 15C3.35786 15 0 11.6421 0 7.5C0 3.35786 3.35786 0 7.5 0C11.6421 0 15 3.35786 15 7.5C15.0001 9.14309 14.4581 10.7403 13.458 12.044ZM7.5 2C4.467 2 2 4.467 2 7.5C2.00331 10.5362 4.4638 12.9967 7.5 13C10.532 13 13 10.532 13 7.5C13 4.467 10.532 2 7.5 2Z" />
               </svg>
             </a>
-            <input class="headerSearch" type="text" name="search" id="search" value="Поиск:">
           </label>
         </form>
         <ul class="bookCart">
           <li class="bookCartItem">
             <img src="img/svg/icon-bookmark.svg" width="14" height="16" class="iconHeader" alt="icon-bookmark" />
-            <a href="#">Закладки: 0</a>
+            <a href="#" class="btnBookCartItem">Закладки: 0</a>
           </li>
           <li class="bookCartActive">
             <img src="img/svg/icon-cart.svg" width="15" height="15" class="iconHeaderCart" alt="icon-cart" />
-            <a href="#">Корзина: 10</a>
+            <a href="#" class="btnBookCartItem">Корзина: 10</a>
           </li>
         </ul>
         <button type="button" class="btnOrder">Оформить заказ </button>
@@ -60,7 +60,7 @@
             <path
               d="M17.881 14.166C15.737 13.431 13.625 12.5 12.674 11.776C12.017 11.275 11.904 10.158 12.157 9.361C13.275 8.458 14.021 6.884 14.021 5.083C14.021 2.276 12.221 0 10 0C7.77902 0 5.97901 2.276 5.97901 5.083C5.97901 6.884 6.72501 8.457 7.84201 9.36C8.09501 10.158 7.98302 11.275 7.32502 11.776C6.37502 12.5 4.26201 13.43 2.11801 14.166C-0.0259852 14.902 1.48343e-05 18 1.48343e-05 18H20C20 18 20.025 14.901 17.881 14.166Z" />
           </svg>
-          Равшан Джамшутович
+          <span>Равшан Джамшутович</span>
           <svg class="icon iconOff" width="20" height="17" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 8.5L11.125 0V6H5.125V11H11.125V17L20 8.5Z" />
             <path
@@ -82,7 +82,7 @@
       <ul class="siteNav">
         <li><a href="index.html">Главная</a></li>
         <li><a href="blank.html">Компания</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
+        <li><a class="siteNavCurrent">Каталог</a></li>
         <li><a href="blank.html">Новости</a></li>
         <li><a href="blank.html">Спецпредложение</a></li>
         <li><a href="blank.html">Доставка</a></li>
@@ -190,11 +190,13 @@
             </ul>
             <div>
               <a href="#">
+                <span class="visually-hidden">По возрастанию</span>
                 <svg class="activeUpDown upDown" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.5 10L0 0H11" />
                 </svg>
               </a>
               <a href="#">
+                <span class="visually-hidden">По убыванию</span>
                 <svg class="upDown" width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.5 10L0 0H11" />
                 </svg>
@@ -211,7 +213,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+                    <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
                 </a>
@@ -225,7 +227,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+                    <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
                 </a>
@@ -239,7 +241,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+                    <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
                 </a>
@@ -253,7 +255,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
+                    <img src="img/goods/bfg-3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 3000</h4>
                 </a>
@@ -267,7 +269,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+                    <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
                 </a>
@@ -281,7 +283,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
+                    <img src="img/goods/bfg-2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 2000</h4>
                 </a>
@@ -294,7 +296,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
+                    <img src="img/goods/bfg-3000.jpg" width="127" height="112" alt="BOSCH BFG 3000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 3000</h4>
                 </a>
@@ -308,7 +310,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
+                    <img src="img/goods/bfg-6000.jpg" width="144" height="128" alt="BOSCH BFG 6000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 6000</h4>
                 </a>
@@ -322,7 +324,7 @@
                 </div>
                 <a href="#">
                   <p class="imgWrapper">
-                    <img src="img/goods/bfg_2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
+                    <img src="img/goods/bfg-2000.jpg" width="127" height="112" alt="BOSCH BFG 2000">
                   </p>
                   <h4>Перфоратор BOSCH<br /> BFG 2000</h4>
                 </a>
@@ -367,11 +369,11 @@
           <a href="index.html" class="footerLogo"> <img src="img/svg/logo-footer.svg" width="138" height="23" alt="Техномарт"> </a>
           <nav>
             <ul class="footerNav footerNavFisrt">
-              <li><a href="blank.html">Компания</a></li>
-              <li><a href="blank.html">Новости</a></li>
-              <li><a href="catalog.html">Каталог</a></li>
-              <li><a href="blank.html">Доставка</a></li>
-              <li><a href="blank.html">Контакты</a></li>
+              <li class="footerNavItem"><a href="blank.html">Компания</a></li>
+              <li class="footerNavItem"><a href="blank.html">Новости</a></li>
+              <li class="footerNavItem"><a href="catalog.html">Каталог</a></li>
+              <li class="footerNavItem"><a href="blank.html">Доставка</a></li>
+              <li class="footerNavItem"><a href="blank.html">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -383,10 +385,10 @@
           </p>
           <nav>
             <ul class="footerNav footerNavSecond">
-              <li><a href="blank.html">Материалы</a></li>
-              <li><a href="blank.html">Техника</a></li>
-              <li><a href="blank.html">Инструмент</a></li>
-              <li><a href="blank.html">Спецпредложение</a></li>
+              <li class="footerNavItem"><a href="blank.html">Материалы</a></li>
+              <li class="footerNavItem"><a href="blank.html">Техника</a></li>
+              <li class="footerNavItem"><a href="blank.html">Инструмент</a></li>
+              <li class="footerNavItem"><a href="blank.html">Спецпредложение</a></li>
             </ul>
           </nav>
         </div>
@@ -444,7 +446,7 @@
     </section>
   </footer>
   <section class="cartPopUp popUp">
-    <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" alt="close" aria-label="Закрыть" /></button>
+    <button class="popUpClose" type="button"><img src="img/svg/icon-close.svg" width="21" height="21" alt="close" aria-label="Закрыть" /></button>
     <h2>
       Товар добавлен в корзину!
     </h2>
